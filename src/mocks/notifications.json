@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "Request Approved",
+        "message": "Procurement request for Cisco Systems was approved",
+        "priority": "high",
+        "read": false,
+        "date": "2026-07-01"
+    },
+    {
+        "id": 2,
+        "title": "Compliance Alert",
+        "message": "Vendor TechCorp certification is expiring soon",
+        "priority": "medium",
+        "read": false,
+        "date": "2026-07-01"
+    },
+    {
+        "id": 3,
+        "title": "Audit Scheduled",
+        "message": "Quarterly audit review starts tomorrow",
+        "priority": "low",
+        "read": true,
+        "date": "2026-06-30"
+    },
+    {
+        "id": 4,
+        "title": "Risk Warning",
+        "message": "High risk detected for Vendor Delay",
+        "priority": "high",
+        "read": false,
+        "date": "2026-07-02"
+    }
+]

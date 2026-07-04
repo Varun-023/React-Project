@@ -1,0 +1,6 @@
+[
+  { "id": 1, "issue": "Missing ISO Certification", "vendor": "TechCorp", "severity": "High", "status": "Open" },
+  { "id": 2, "issue": "Expired License", "vendor": "Global Solutions", "severity": "Medium", "status": "Pending" },
+  { "id": 3, "issue": "Data Privacy Violation", "vendor": "DataSync", "severity": "Critical", "status": "Open" },
+  { "id": 4, "issue": "Late Audit Submission", "vendor": "Logistics Pro", "severity": "Low", "status": "Resolved" }
+]

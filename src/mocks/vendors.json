@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Infosys",
+        "status": "Approved",
+        "category": "IT"
+    },
+    {
+        "id": 2,
+        "name": "TCS",
+        "status": "Pending",
+        "category": "Services"
+    },
+    {
+        "id": 3,
+        "name": "Wipro",
+        "status": "Active",
+        "category": "Software"
+    }
+]

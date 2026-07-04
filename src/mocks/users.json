@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "email": "admin@egrcp.com",
+        "password": "admin1234",
+        "name": "Admin User",
+        "role": "Administrator"
+    },
+    {
+        "id": 2,
+        "email": "employee@egrcp.com",
+        "password": "employee123",
+        "name": "John Employee",
+        "role": "Employee"
+    },
+    {
+        "id": 3,
+        "email": "manager@egrcp.com",
+        "password": "manager123",
+        "name": "Sarah Manager",
+        "role": "Procurement Manager"
+    },
+    {
+        "id": 4,
+        "email": "auditor@egrcp.com",
+        "password": "auditor123",
+        "name": "Mike Auditor",
+        "role": "Auditor"
+    }
+]

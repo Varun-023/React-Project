@@ -1,0 +1,6 @@
+[
+  { "id": 1, "activity": "User Login", "user": "admin@egrcp.com", "timestamp": "2026-07-01 10:00 AM", "status": "Success" },
+  { "id": 2, "activity": "Vendor Approved", "user": "manager@egrcp.com", "timestamp": "2026-07-01 11:30 AM", "status": "Success" },
+  { "id": 3, "activity": "Failed Login Attempt", "user": "unknown", "timestamp": "2026-07-02 09:15 AM", "status": "Failed" },
+  { "id": 4, "activity": "Report Generated", "user": "auditor@egrcp.com", "timestamp": "2026-07-02 02:00 PM", "status": "Success" }
+]

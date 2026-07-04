@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "riskName": "Vendor Delay",
+        "level": "High"
+    },
+    {
+        "id": 2,
+        "riskName": "Payment Issue",
+        "level": "Medium"
+    },
+    {
+        "id": 3,
+        "riskName": "Compliance Violation",
+        "level": "High"
+    }
+]

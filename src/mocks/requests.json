@@ -1,0 +1,5 @@
+[
+  { "id": 1, "vendorName": "Cisco Systems", "amount": 50000, "category": "Networking", "status": "Pending" },
+  { "id": 2, "vendorName": "Dell EMC", "amount": 120000, "category": "Hardware", "status": "Approved" },
+  { "id": 3, "vendorName": "AWS", "amount": 35000, "category": "Cloud Services", "status": "Pending" }
+]

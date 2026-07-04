@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "requestId": 101,
+        "vendorName": "Cisco Systems",
+        "amount": 50000,
+        "department": "IT",
+        "status": "Pending",
+        "submittedBy": "John Employee"
+    },
+    {
+        "id": 2,
+        "requestId": 102,
+        "vendorName": "Dell EMC",
+        "amount": 120000,
+        "department": "Infrastructure",
+        "status": "Approved",
+        "submittedBy": "John Employee"
+    },
+    {
+        "id": 3,
+        "requestId": 103,
+        "vendorName": "AWS",
+        "amount": 35000,
+        "department": "Cloud",
+        "status": "Rejected",
+        "submittedBy": "John Employee"
+    },
+    {
+        "id": 4,
+        "requestId": 104,
+        "vendorName": "Infosys",
+        "amount": 80000,
+        "department": "Services",
+        "status": "Escalated",
+        "submittedBy": "John Employee"
+    }
+]

@@ -1,0 +1,83 @@
+import { useState, useEffect, useMemo, useCallback } from "react";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { getReports } from "../services/reportService";
+import Loader from "../components/Loader";
+import ErrorState from "../components/ErrorState";
+import DataTable from "../components/common/DataTable";
+
+function Reports() {
+    const [reports, setReports] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
+    const [search, setSearch] = useState("");
+
+    const filteredReports = useMemo(() => {
+        return reports.filter((report) =>
+            report.title.toLowerCase().includes(search.toLowerCase()) ||
+            report.status.toLowerCase().includes(search.toLowerCase())
+        );
+    }, [reports, search]);
+
+    const handleSearchChange = useCallback((value) => {
+        setSearch(value);
+    }, []);
+
+    async function loadReports() {
+        try {
+            const data = await getReports();
+            setReports(data);
+        } catch {
+            setError("Failed to load reports");
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
+        loadReports();
+    }, []);
+
+    const columns = [
+        { field: "title", headerName: "Report Title" },
+        { field: "status", headerName: "Status" }
+    ];
+
+    if (loading) {
+        return (
+            <>
+                <Loader />
+            </>
+        );
+    }
+
+    if (error) {
+        return (
+            <>
+                <ErrorState message={error} />
+            </>
+        );
+    }
+
+    return (
+        <>
+            <Typography variant="h5" sx={{ mb: 3 }}>
+                Reports
+            </Typography>
+
+            <Box sx={{ mb: 2 }}>
+                <input 
+                    type="text" 
+                    placeholder="Search reports..." 
+                    value={search} 
+                    onChange={(e) => handleSearchChange(e.target.value)} 
+                    style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '200px' }}
+                />
+            </Box>
+
+            <DataTable columns={columns} rows={filteredReports} />
+        </>
+    );
+}
+
+export default Reports;

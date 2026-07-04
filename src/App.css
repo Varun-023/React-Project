@@ -1,0 +1,8 @@
+/* existing file was empty, now used for responsive overrides */
+
+@media (max-width: 600px) {
+  .main-content {
+    margin-left: 70px !important;
+    padding: 12px !important;
+  }
+}

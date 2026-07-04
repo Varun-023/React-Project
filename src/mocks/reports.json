@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "Monthly Procurement Report",
+        "status": "Generated"
+    },
+    {
+        "id": 2,
+        "title": "Vendor Performance Report",
+        "status": "Pending"
+    },
+    {
+        "id": 3,
+        "title": "Risk Assessment Report",
+        "status": "Completed"
+    }
+]
