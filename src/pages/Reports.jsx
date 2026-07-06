@@ -1,12 +1,13 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import { getReports } from "../services/reportService";
 import Loader from "../components/Loader";
 import ErrorState from "../components/ErrorState";
 import DataTable from "../components/common/DataTable";
 
-function Reports() {
+const Reports = React.memo(function Reports() {
     const [reports, setReports] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
@@ -38,26 +39,21 @@ function Reports() {
         loadReports();
     }, []);
 
-    const columns = [
+    const columns = useMemo(() => [
         { field: "title", headerName: "Report Title" },
         { field: "status", headerName: "Status" }
-    ];
+    ], []);
 
-    if (loading) {
-        return (
-            <>
-                <Loader />
-            </>
-        );
-    }
+    const handleExportCSV = useCallback(() => {
+        alert("Exporting Reports to CSV...");
+    }, []);
 
-    if (error) {
-        return (
-            <>
-                <ErrorState message={error} />
-            </>
-        );
-    }
+    const handleExportExcel = useCallback(() => {
+        alert("Exporting Reports to Excel...");
+    }, []);
+
+    if (loading) return <Loader />;
+    if (error) return <ErrorState message={error} />;
 
     return (
         <>
@@ -65,19 +61,25 @@ function Reports() {
                 Reports
             </Typography>
 
-            <Box sx={{ mb: 2 }}>
+            <Box sx={{ mb: 3, display: 'flex', gap: 2, alignItems: 'center', flexWrap: 'wrap' }}>
                 <input 
                     type="text" 
                     placeholder="Search reports..." 
                     value={search} 
                     onChange={(e) => handleSearchChange(e.target.value)} 
-                    style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '200px' }}
+                    style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '250px' }}
                 />
+                <Button variant="contained" color="primary" onClick={handleExportCSV}>
+                    Export CSV
+                </Button>
+                <Button variant="outlined" color="primary" onClick={handleExportExcel}>
+                    Export Excel
+                </Button>
             </Box>
 
             <DataTable columns={columns} rows={filteredReports} />
         </>
     );
-}
+});
 
 export default Reports;

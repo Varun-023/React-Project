@@ -21,6 +21,32 @@ async function loginUser(email, password) {
 
 }
 
+async function signupUser(name, email, password, role) {
+
+    const existingUser = usersData.find((item) => item.email === email);
+    if (existingUser) {
+        throw new Error("Email is already registered. Please login or use a different email.");
+    }
+
+    const newUser = {
+        id: Math.floor(Math.random() * 1000) + 10,
+        name,
+        email,
+        password,
+        role
+    };
+
+    // Add new user to the mock database so it can be logged into later in the same session
+    usersData.push(newUser);
+
+    const response = await mockApi(newUser, 400);
+
+    const { password: pwd, ...safeUser } = response.data;
+
+    return safeUser;
+
+}
+
 async function getUsers() {
 
     const response = await mockApi(usersData, 300);
@@ -29,4 +55,4 @@ async function getUsers() {
 
 }
 
-export { loginUser, getUsers };
+export { loginUser, getUsers, signupUser };

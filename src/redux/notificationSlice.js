@@ -28,46 +28,36 @@ const notificationSlice = createSlice({
     },
 
     reducers: {
-
         markAsRead: (state, action) => {
-
             const item = state.notifications.find(
-
                 (notification) => notification.id === action.payload
-
             );
-
             if (item) {
                 item.read = true;
             }
-
         },
-
+        markAsUnread: (state, action) => {
+            const item = state.notifications.find(
+                (notification) => notification.id === action.payload
+            );
+            if (item) {
+                item.read = false;
+            }
+        },
         markAllRead: (state) => {
-
             state.notifications.forEach((notification) => {
-
                 notification.read = true;
-
             });
-
         }
-
     },
-
     extraReducers: (builder) => {
-
         builder
             .addCase(fetchNotifications.fulfilled, (state, action) => {
-
                 state.notifications = action.payload;
-
             });
-
     }
-
 });
 
-export const { markAsRead, markAllRead } = notificationSlice.actions;
+export const { markAsRead, markAsUnread, markAllRead } = notificationSlice.actions;
 
 export default notificationSlice.reducer;

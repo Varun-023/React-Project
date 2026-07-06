@@ -112,14 +112,17 @@ function Procurement() {
 
             <Typography variant="h6" sx={{ mb: 2 }}>Procurement List</Typography>
 
-            <Box sx={{ mb: 2 }}>
+            <Box sx={{ mb: 2, display: 'flex', gap: 2, alignItems: 'center' }}>
                 <input 
                     type="text" 
                     placeholder="Search requests..." 
                     value={search} 
                     onChange={(e) => handleSearchChange(e.target.value)} 
-                    style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '200px' }}
+                    style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '250px' }}
                 />
+                <Button variant="outlined" onClick={() => alert("Exporting CSV...")}>
+                    Export CSV
+                </Button>
             </Box>
 
             <DataTable columns={columns} rows={pageData} />
